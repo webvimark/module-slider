@@ -1,4 +1,4 @@
-Slider modules for Yii 2
+Slider module for Yii 2
 =====
 
 
