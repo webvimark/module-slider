@@ -42,8 +42,10 @@ In your config/web.php
 Usage
 -----
 
-Go to http://site.com/slider/slider/index
-Go to http://site.com/slider/slider-image/index
+1 Go to http://site.com/slider/slider/index
+2 Create slider with some "code" (for example "code" = "main"
+3 Go to http://site.com/slider/slider-image/index?slider=main
+4 Add images
 
 and finally use widget
 
