@@ -1,0 +1,12 @@
+{
+	"name": "webvimark/module-slider",
+	"description": "Slider :)",
+	"autoload": {
+		"psr-4": {
+			"webvimark\\modules\\slider\\": ""
+		}
+	},
+	"require": {
+		"webvimark/components": "dev-master"
+	}
+}
