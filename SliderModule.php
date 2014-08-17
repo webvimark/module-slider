@@ -1,10 +1,10 @@
 <?php
 
-namespace modules\slider;
+namespace webvimark\modules\slider;
 
 class SliderModule extends \yii\base\Module
 {
-	public $controllerNamespace = 'modules\slider\controllers';
+	public $controllerNamespace = 'webvimark\modules\slider\controllers';
 
 	public function init()
 	{

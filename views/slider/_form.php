@@ -6,7 +6,7 @@ use webvimark\extensions\BootstrapSwitch\BootstrapSwitch;
 
 /**
  * @var yii\web\View $this
- * @var modules\slider\models\Slider $model
+ * @var webvimark\modules\slider\models\Slider $model
  * @var yii\bootstrap\ActiveForm $form
  */
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-use modules\slider\models\Slider;
+use webvimark\modules\slider\models\Slider;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
@@ -12,7 +12,7 @@ use yii\grid\GridView;
  * @var yii\web\View $this
  * @var Slider $sliderModel
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var modules\slider\models\search\SliderImageSearch $searchModel
+ * @var webvimark\modules\slider\models\search\SliderImageSearch $searchModel
  */
 
 $this->title = 'Слайдер';

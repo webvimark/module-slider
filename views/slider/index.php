@@ -11,7 +11,7 @@ use yii\grid\GridView;
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var modules\slider\models\search\SliderSearch $searchModel
+ * @var webvimark\modules\slider\models\search\SliderSearch $searchModel
  */
 
 $this->title = 'Список слайдеров';

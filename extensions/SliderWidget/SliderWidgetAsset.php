@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\slider\extensions\SliderWidget;
+namespace webvimark\modules\slider\extensions\SliderWidget;
 
 
 use yii\web\AssetBundle;

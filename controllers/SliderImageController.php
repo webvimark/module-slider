@@ -1,11 +1,11 @@
 <?php
 
-namespace modules\slider\controllers;
+namespace webvimark\modules\slider\controllers;
 
-use modules\slider\models\Slider;
+use webvimark\modules\slider\models\Slider;
 use Yii;
-use modules\slider\models\SliderImage;
-use modules\slider\models\search\SliderImageSearch;
+use webvimark\modules\slider\models\SliderImage;
+use webvimark\modules\slider\models\search\SliderImageSearch;
 use webvimark\components\AdminDefaultController;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
@@ -18,12 +18,12 @@ class SliderImageController extends AdminDefaultController
 	/**
 	 * @var SliderImage
 	 */
-	public $modelClass = 'modules\slider\models\SliderImage';
+	public $modelClass = 'webvimark\modules\slider\models\SliderImage';
 
 	/**
 	 * @var SliderImageSearch
 	 */
-	public $modelSearchClass = 'modules\slider\models\search\SliderImageSearch';
+	public $modelSearchClass = 'webvimark\modules\slider\models\search\SliderImageSearch';
 
 	public function behaviors()
 	{

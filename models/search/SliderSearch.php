@@ -1,14 +1,14 @@
 <?php
 
-namespace modules\slider\models\search;
+namespace webvimark\modules\slider\models\search;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use modules\slider\models\Slider;
+use webvimark\modules\slider\models\Slider;
 
 /**
- * SliderSearch represents the model behind the search form about `modules\slider\models\Slider`.
+ * SliderSearch represents the model behind the search form about `webvimark\modules\slider\models\Slider`.
  */
 class SliderSearch extends Slider
 {

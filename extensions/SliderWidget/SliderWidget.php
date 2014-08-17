@@ -1,9 +1,9 @@
 <?php
 
-namespace modules\slider\extensions\SliderWidget;
+namespace webvimark\modules\slider\extensions\SliderWidget;
 
 
-use modules\slider\models\SliderImage;
+use webvimark\modules\slider\models\SliderImage;
 use yii\base\Widget;
 use yii\helpers\Json;
 

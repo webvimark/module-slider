@@ -1,10 +1,10 @@
 <?php
 
-namespace modules\slider\controllers;
+namespace webvimark\modules\slider\controllers;
 
 use Yii;
-use modules\slider\models\Slider;
-use modules\slider\models\search\SliderSearch;
+use webvimark\modules\slider\models\Slider;
+use webvimark\modules\slider\models\search\SliderSearch;
 use webvimark\components\AdminDefaultController;
 use yii\filters\VerbFilter;
 
@@ -16,12 +16,12 @@ class SliderController extends AdminDefaultController
 	/**
 	 * @var Slider
 	 */
-	public $modelClass = 'modules\slider\models\Slider';
+	public $modelClass = 'webvimark\modules\slider\models\Slider';
 
 	/**
 	 * @var SliderSearch
 	 */
-	public $modelSearchClass = 'modules\slider\models\search\SliderSearch';
+	public $modelSearchClass = 'webvimark\modules\slider\models\search\SliderSearch';
 
 	public function behaviors()
 	{

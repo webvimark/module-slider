@@ -1,13 +1,13 @@
 <?php
 
-use modules\slider\models\Slider;
+use webvimark\modules\slider\models\Slider;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use webvimark\extensions\BootstrapSwitch\BootstrapSwitch;
 
 /**
  * @var yii\web\View $this
- * @var modules\slider\models\SliderImage $model
+ * @var webvimark\modules\slider\models\SliderImage $model
  * @var yii\bootstrap\ActiveForm $form
  * @var Slider $sliderModel
  */

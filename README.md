@@ -31,7 +31,7 @@ In your config/web.php
 		...
 
 		'slider' => [
-			'class' => 'webvimark\modules\slider\SliderModule',
+			'class' => 'webvimark\webvimark\modules\slider\SliderModule',
 		],
 
 		...

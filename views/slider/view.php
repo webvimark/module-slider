@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\web\View $this
- * @var modules\slider\models\Slider $model
+ * @var webvimark\modules\slider\models\Slider $model
  */
 
 $this->title = $model->name;

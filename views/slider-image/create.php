@@ -1,12 +1,12 @@
 <?php
 
-use modules\slider\models\Slider;
+use webvimark\modules\slider\models\Slider;
 use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
  * @var Slider $sliderModel
- * @var modules\slider\models\SliderImage $model
+ * @var webvimark\modules\slider\models\SliderImage $model
  */
 
 $this->title = 'Создание картинки слайдера';

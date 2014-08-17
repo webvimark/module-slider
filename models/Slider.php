@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\slider\models;
+namespace webvimark\modules\slider\models;
 
 use Yii;
 use yii\helpers\Inflector;

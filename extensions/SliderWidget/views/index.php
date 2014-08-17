@@ -5,7 +5,7 @@
  * @var $slides SliderImage[]
  */
 
-use modules\slider\models\SliderImage;
+use webvimark\modules\slider\models\SliderImage;
 use yii\helpers\Html;
 
 ?>
