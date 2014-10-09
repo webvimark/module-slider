@@ -22,7 +22,6 @@ class SliderWidget extends Widget
 	public $code;
 
 	/**
-	 * @see http://bxslider.com/options
 	 * @var array
 	 */
 	public $pluginOptions = [];
@@ -44,10 +43,6 @@ class SliderWidget extends Widget
 
 		if ( $slides )
 		{
-			SliderWidgetAsset::register($this->view);
-
-			$this->initJs();
-
 			return $this->render('index', [
 				'slides'=>$slides,
 				'code'=>$this->code,
@@ -55,17 +50,4 @@ class SliderWidget extends Widget
 		}
 	}
 
-	/**
-	 * Initialize bxslider
-	 */
-	protected function initJs()
-	{
-		$options = Json::encode($this->pluginOptions);
-
-		$js = <<<JS
- 			$('.bxslider').bxSlider($options);
-JS;
-
-		$this->view->registerJs($js);
-	}
 } 

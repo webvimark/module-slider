@@ -15,12 +15,12 @@ use webvimark\extensions\BootstrapSwitch\BootstrapSwitch;
 <div class="slider-image-form">
 
 	<?php $form = ActiveForm::begin([
-		'id'=>'slider-image-form',
-		'layout'=>'horizontal',
-			'options'=>[
-			'enctype'=>"multipart/form-data",
+		'id'      => 'slider-image-form',
+		'layout'  => 'horizontal',
+		'options' => [
+			'enctype' => "multipart/form-data",
 		]
-		]); ?>
+	]); ?>
 
 	<?= $form->field($model->loadDefaultValues(), 'active')->checkbox(['class'=>'b-switch'], false) ?>
 

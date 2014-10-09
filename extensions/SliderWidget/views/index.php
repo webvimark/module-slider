@@ -9,28 +9,52 @@ use webvimark\modules\slider\models\SliderImage;
 use yii\helpers\Html;
 
 ?>
+<div class="container">
+	<div class="slider-widget">
 
-<div class="slider-widget slider-widget-<?= $code ?>">
+		<div class="carousel slide slider-widget-<?= $code ?>" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<?php $i = 0; ?>
+				<?php foreach ($slides as $slide): ?>
 
-	<ul class="bxslider">
-		<?php foreach ($slides as $slide): ?>
+					<li data-target=".slider-widget-<?= $code ?>" data-slide-to="<?= $i++ ?>" class="<?= ($i == 1) ? 'active' :'' ?>"></li>
 
-			<li>
-				<?php if ( $slide->slider->has_link == 1 ): ?>
+				<?php endforeach ?>
+			</ol>
 
-					<?= Html::a(
-						Html::img($slide->getImageUrl(), ['alt'=>$slide->slider->name]),
-						$slide->link
-					) ?>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<?php $i = 0; ?>
+				<?php foreach ($slides as $slide): ?>
 
-				<?php else: ?>
+					<div class="item <?= ($i++ == 0) ? 'active' : '' ?>">
+						<?php if ( $slide->slider->has_link == 1 ): ?>
 
-					<?= Html::img($slide->getImageUrl()) ?>
+							<?= Html::a(
+								Html::img($slide->getImageUrl(), ['alt'=>$slide->slider->name]),
+								$slide->link
+							) ?>
 
-				<?php endif; ?>
-			</li>
+						<?php else: ?>
 
-		<?php endforeach ?>
-	</ul>
+							<?= Html::img($slide->getImageUrl()) ?>
+
+						<?php endif; ?>
+					</div>
+
+				<?php endforeach ?>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href=".slider-widget-<?= $code ?>" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href=".slider-widget-<?= $code ?>" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+
+	</div>
 
 </div>
