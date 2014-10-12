@@ -25,6 +25,10 @@ use yii\web\UploadedFile;
  */
 class SliderImage extends \webvimark\components\BaseActiveRecord
 {
+	public $thumbs = [
+		'full' => null,
+	];
+
 	/**
 	* @inheritdoc
 	*/
@@ -50,10 +54,9 @@ class SliderImage extends \webvimark\components\BaseActiveRecord
 	{
 		return [
 			[['active', 'sorter', 'slider_id', 'created_at', 'updated_at'], 'integer'],
-			[['image'], 'required'],
 			[['body'], 'string'],
 			[['link'], 'string', 'max' => 255],
-			[['image'], 'image', 'maxSize' => 1024*1024*5]
+			[['image'], 'image', 'maxSize' => 1024*1024*5, 'extensions'=>['gif', 'png', 'jpg', 'jpeg']]
 		];
 	}
 

@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-sm-6">
 					<p>
 						<?= Html::a(
-							'<span class="glyphicon glyphicon-plus-sign"></span> ' . 'Создать',
+							'<span class="glyphicon glyphicon-plus-sign"></span> ' . 'Создать и перейти к редактированию',
 							['create', 'slider'=>$sliderModel->code],
 							['class' => 'btn btn-sm btn-success']
 						) ?>
@@ -71,7 +71,10 @@ $this->params['breadcrumbs'][] = $this->title;
 					[
 						'value'=>function($model){
 								return Html::a(
-									Html::img($model->getImageUrl('medium', 'image')),
+									Html::img(
+										$model->getImageUrl('full', 'image'),
+										['style'=>'max-width:400px']
+									),
 									['update', 'id'=>$model->id],
 									['data-pjax'=>0]
 								);

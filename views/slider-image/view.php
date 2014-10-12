@@ -48,8 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
 					],
 					[
 						'attribute'=>'image',
-						'value'=>Html::img($model->getImageUrl('medium', 'image')),
-						'visible'=>is_file($model->getImagePath('medium', 'image')),
+						'value'=>Html::img(
+								$model->getImageUrl('full', 'image'),
+								['style'=>'max-width:700px']
+							),
+						'visible'=>is_file($model->getImagePath('full', 'image')),
 						'format'=>'raw',
 					],
 					[

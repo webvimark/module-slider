@@ -41,6 +41,12 @@ use yii\helpers\Html;
 							<?= Html::img($slide->getImageUrl()) ?>
 
 						<?php endif; ?>
+
+						<?php if ( $slide->body AND $slide->slider->has_body == 1 ): ?>
+							<div class="carousel-caption">
+								<?= $slide->body ?>
+							</div>
+						<?php endif; ?>
 					</div>
 
 				<?php endforeach ?>

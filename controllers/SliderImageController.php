@@ -2,6 +2,7 @@
 
 namespace webvimark\modules\slider\controllers;
 
+use app\webvimark\extensions\Cropper\CropperHelper;
 use webvimark\modules\slider\models\Slider;
 use Yii;
 use webvimark\modules\slider\models\SliderImage;
@@ -78,13 +79,79 @@ class SliderImageController extends AdminDefaultController
 
 		$model = new SliderImage();
 		$model->slider_id = $sliderModel->id;
+		$model->save(false);
 
-		if ( $model->load(Yii::$app->request->post()) && $model->save() )
+		$this->redirect(['update', 'id'=>$model->id]);
+
+	}
+
+	/**
+	 * actionCrop
+	 */
+	public function actionCrop()
+	{
+
+		if ( isset($_REQUEST['modelId']) )
 		{
-			return $this->redirect($this->getRedirectPage('create', $model));
+			$model = SliderImage::findOne((int)$_REQUEST['modelId']);
+
+			$uploadDir = $model->getUploadDir() . '/full';
+
+			$model->prepareUploadDir($model->getUploadDir());
+
+			$helper = new CropperHelper(
+				'cropperFileUpload',
+				Yii::$app->request->baseUrl . "/images/slider_image/full/",
+				$uploadDir
+			);
+
+			if ( isset($_GET['cropper-data']) )
+			{
+				if ( $model )
+				{
+					$newImageName = uniqid() . '_' . $helper->_getData('originalName');
+
+					$helper->crop($uploadDir . '/' . $newImageName);
+					$helper->deleteTmpImage();
+
+					@unlink($uploadDir . '/' . $model->image);
+
+					$model->image = $newImageName;
+					$model->save(false);
+				}
+			}
+
+			$tmpImage = $helper->getTmpImage();
+			if ( $tmpImage )
+			{
+				$model->image = $tmpImage;
+
+				if ( $model->validate('image') )
+				{
+					$helper->saveTmpImage($tmpImage);
+				}
+				else
+				{
+					$errors_tmp = $model->getErrors('image');
+					$helper->throwError($errors_tmp[0]);
+				}
+			}
 		}
 
-		return $this->renderIsAjax('create', compact('model', 'sliderModel'));
+		if ( isset($_GET['cropper-deleteTmpImage']) )
+		{
+			$model = new SliderImage();
+			$uploadDir = $model->getUploadDir() . '/full';
+
+			$helper = new CropperHelper(
+				'cropperFileUpload',
+				Yii::$app->request->baseUrl . "/images/slider_image/full/",
+				$uploadDir
+			);
+
+			$helper->deleteAllTmpImages();
+		}
+
 	}
 
 	/**

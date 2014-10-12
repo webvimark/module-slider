@@ -26,7 +26,7 @@ class m140809_155448_create_slider_and_slider_image extends Migration
 
 		$this->createTable('slider_image', array(
 			'id'         => 'pk',
-			'active'     => 'tinyint(1) not null default 1',
+			'active'     => 'tinyint(1) not null default 0',
 			'sorter'     => 'int not null',
 			'image'      => 'string not null',
 			'slider_id'  => 'int',
