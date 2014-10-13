@@ -10,8 +10,9 @@ class m140809_172908_insert_main_slider extends Migration
 			'active'=>1,
 			'name'=>'Основной слайдер',
 			'code'=>'main',
-			'width'=>1000,
-			'height'=>500,
+			'width'=>1280,
+			'height'=>450,
+			'has_body'=>1,
 		]);
 	}
 

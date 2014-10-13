@@ -118,6 +118,8 @@ class SliderImageController extends AdminDefaultController
 
 					$model->image = $newImageName;
 					$model->save(false);
+
+					Yii::$app->cache->flush();
 				}
 			}
 

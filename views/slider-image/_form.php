@@ -1,6 +1,6 @@
 <?php
 
-use app\webvimark\extensions\Cropper\Cropper;
+use webvimark\extensions\Cropper\Cropper;
 use webvimark\extensions\ckeditor\CKEditor;
 use webvimark\modules\slider\models\Slider;
 use yii\helpers\Html;
@@ -54,29 +54,12 @@ use yii\helpers\Url;
 	</div>
 
 
-<!--	--><?//= $form->field($model, 'image', ['enableClientValidation'=>false, 'enableAjaxValidation'=>false])->fileInput(['class'=>'form-control']) ?>
+	<?php if ( $model->slider->has_link == 1 ): ?>
+		<?= $form->field($model, 'link') ?>
+	<?php endif; ?>
 
-	<?php if ( $model->isNewRecord ): ?>
-
-		<?php if ( $sliderModel->has_link == 1 ): ?>
-			<?= $form->field($model, 'link') ?>
-		<?php endif; ?>
-
-		<?php if ( $sliderModel->has_body == 1 ): ?>
-			<?= $form->field($model, 'body')->textarea(['rows'=>5]) ?>
-		<?php endif; ?>
-
-
-	<?php else: ?>
-
-		<?php if ( $model->slider->has_link == 1 ): ?>
-			<?= $form->field($model, 'link') ?>
-		<?php endif; ?>
-
-		<?php if ( $model->slider->has_body == 1 ): ?>
-			<?= $form->field($model, 'body')->textarea(['rows'=>5]) ?>
-		<?php endif; ?>
-
+	<?php if ( $model->slider->has_body == 1 ): ?>
+		<?= $form->field($model, 'body')->textarea(['rows'=>5]) ?>
 	<?php endif; ?>
 
 	<div class="form-group">
